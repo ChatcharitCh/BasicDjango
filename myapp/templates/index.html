@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- เรียกใช้งานจาก base template-->
+{% extends "base.html" %}
+
+{% block title %}
     <title>First Page</title>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <h1>Hello, {{fname | upper}} {{lname | upper}}</h1>
     <h2>Age = {{age}}</h2>
+    
     {% if age >= 20 %}
         <h3>Welcome Adult</h3>
     {% else %}
         <h3>Welcome Teen</h3>
     {% endif %}
-    <hr>
-    <a href = "/">First Page</a>
-    <a href ="/about">About us</a>
-    <a href ="/form">Information form</a>
-</body>
-</html>
+{% endblock %}

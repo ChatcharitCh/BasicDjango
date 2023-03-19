@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+
+{% block title %}
     <title>About Us</title>
-</head>
-<body>
-    <h1 style="color: red">About Us</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sequi voluptatibus delectus, quaerat enim soluta commodi in nisi consequatur, rem laudantium doloribus. Officiis eos alias minima consequuntur consequatur quis consectetur.</p>
-    <hr>
-    <a href = "/">First Page</a>
-    <a href ="/about">About us</a>
-    <a href ="/form">Information form</a>
-</body>
-</html>
+{% endblock %}
+
+{% block content %}
+<h1 style="color: black">About Us</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sequi voluptatibus delectus, quaerat enim soluta commodi in nisi consequatur, rem laudantium doloribus. Officiis eos alias minima consequuntur consequatur quis consectetur.</p>
+{% endblock %}
+
+    
