@@ -7,3 +7,6 @@ class Person(models.Model): # ต้องสืบทอดมาจากค�
     lname = models.CharField(max_length=50)
     age = models.IntegerField()
     date = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str: # แปลง object ให้เป็น string
+        return "First Name: " + self.fname + " , Last Name: " + self.lname + " , Age: " + str(self.age)
