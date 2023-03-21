@@ -31,4 +31,5 @@ def form(request):
         return render(request, "form.html")
     
 def edit(request, person_id):
-    return render(request, "edit.html")
+    person = Person.objects.get(id = person_id) # ดึงข้อมูลประชากรที่ต้องการแก้ไข
+    return render(request, "edit.html", {"person": person})
