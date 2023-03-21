@@ -9,4 +9,4 @@ class Person(models.Model): # สร้างคลาสข้อมูลป�
 
     # แปลง object ให้เป็น string
     def __str__(self) -> str:
-        return "Name: " + self.name + " , Age: " + str(self.age)
+        return self.name + " ," + str(self.age)

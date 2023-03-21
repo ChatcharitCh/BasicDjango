@@ -12,12 +12,19 @@ def about(request):
 
 def form(request):
     if request.method == "POST":
-    # รับข้อมูล
+        # รับข้อมูล
         name = request.POST["name"]
         age = request.POST["age"]
         print(name, age)
+        
+        # บันทึกข้อมูล
+        person = Person.objects.create(
+            name = name, # ด้านหน้าเป็นชื่อฟิลด์ ด้านหลังเป็นข้อมูลที่จะมาทำงานกับฟิลด์
+            age = age
+        )
+        person.save()
+        
+        # เปลี่ยนเส้นทางกลับหน้าแรก
         return redirect("/")
-    # บันทึกข้อมูล
-
     else :
         return render(request, "form.html")
