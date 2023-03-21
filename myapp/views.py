@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse # ส่งข้อความตอบกลับ
 from myapp.models import Person
 
@@ -11,4 +11,13 @@ def about(request):
     return render(request, "about.html")
 
 def form(request):
-    return render(request, "form.html")
+    if request.method == "POST":
+    # รับข้อมูล
+        name = request.POST["name"]
+        age = request.POST["age"]
+        print(name, age)
+        return redirect("/")
+    # บันทึกข้อมูล
+
+    else :
+        return render(request, "form.html")

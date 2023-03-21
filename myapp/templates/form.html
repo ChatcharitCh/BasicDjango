@@ -9,7 +9,8 @@
 
 {% block content %}
     <h2 class="text-center">Registratrion Form</h2>
-    <form>
+    <form method="post" action="form">
+        {% csrf_token %}
         <div class="form-group">
             <label for ="name">Name</label>
             <input type="text" name="name" class="form-control">
