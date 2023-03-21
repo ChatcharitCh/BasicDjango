@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse # ส่งข้อความตอบกลับ
 from myapp.models import Person
+from django.contrib import messages 
 
 # Create your views here.
 def index(request): # สร้างฟังก์ชั่นส่งข้อความไปแสดงผลหน้าเว็ป
@@ -23,7 +24,7 @@ def form(request):
             age = age
         )
         person.save()
-        
+        messages.success(request, "Save Successful")
         # เปลี่ยนเส้นทางกลับหน้าแรก
         return redirect("/")
     else :
