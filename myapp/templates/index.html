@@ -6,5 +6,29 @@
 {% endblock %}
 
 {% block content %}
-    {{all_person}}
+    <h2 class = "text-center">Information</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <!-- วนลูปค่าที่อยู่ all_person -->
+          {% for person in all_person %}
+          <tr>
+            <th scope="row">{{person.id}}</th>
+            <td>{{person.name}}</td>
+            <td>{{person.age}}</td>
+            <td><a href="#" class="btn btn-warning">Edit</td>
+            <td><a href="#" class="btn btn-danger">Delete</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 {% endblock %}
