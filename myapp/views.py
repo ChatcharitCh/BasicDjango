@@ -41,3 +41,9 @@ def edit(request, person_id):
     else :    
         person = Person.objects.get(id = person_id) # ดึงข้อมูลประชากรที่ต้องการแก้ไข
         return render(request, "edit.html", {"person": person})
+    
+def delete(request, person_id):
+    person = Person.objects.get(id = person_id)
+    person.delete()
+    messages.success(request, "Deleted Successful")    
+    return redirect("/")
