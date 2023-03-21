@@ -6,12 +6,5 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Hello, {{fname | upper}} {{lname | upper}}</h1>
-    <h2>Age = {{age}}</h2>
-    
-    {% if age >= 20 %}
-        <h3>Welcome Adult</h3>
-    {% else %}
-        <h3>Welcome Teen</h3>
-    {% endif %}
+    {{all_person}}
 {% endblock %}
