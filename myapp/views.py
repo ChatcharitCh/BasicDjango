@@ -31,5 +31,13 @@ def form(request):
         return render(request, "form.html")
     
 def edit(request, person_id):
-    person = Person.objects.get(id = person_id) # ดึงข้อมูลประชากรที่ต้องการแก้ไข
-    return render(request, "edit.html", {"person": person})
+    if request.method == "POST": # ถ้ามีการส่งข้อมูลมาแก้ไขจะให้
+        person = Person.objects.get(id = person_id)
+        person.name = request.POST["name"] # ส่งชื่อมาเปลี่ยนที่ person.name
+        person.age = request.POST["age"]
+        person.save()
+        messages.success(request, "Updated Successful")    
+        return redirect("/")
+    else :    
+        person = Person.objects.get(id = person_id) # ดึงข้อมูลประชากรที่ต้องการแก้ไข
+        return render(request, "edit.html", {"person": person})
