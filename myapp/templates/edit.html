@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>
+        Edit Data
+    </title>
+
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Registratrion Form</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for ="name">Name</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for ="age">Age</label>
+            <input type="number" name="age" class="form-control">
+        </div>
+        <input type="submit" value ="Update" class="btn btn-success">
+    </form>
+{% endblock %}  
